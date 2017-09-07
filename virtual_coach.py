@@ -2,7 +2,6 @@ import logging
 import boto3
 from modules import goals, tips, user, activities, opportunities, ssml
 from boto3.dynamodb.conditions import Key, Attr
-#from random import randint
 from flask import Flask, render_template
 from flask_ask import Ask, statement, question, session
 
@@ -17,7 +16,6 @@ count = activities.countactivities(userinfo_item['userid'])
 
 @ask.launch
 def start_skill():
-    #welcome_message = render_template('welcome', first_name=item['first_name'], last_name=item['last_name'], openact=item['openact'], factfind=item['factfind'], suspects=item['suspects'], meals=item['meals'])
     welcome_message = render_template('welcome', first_name=userinfo_item['first_name'], last_name=userinfo_item['last_name'], openact=count)
     welcome_message += "Would you like to hear your goal progress?..."
 
@@ -37,8 +35,6 @@ def yes_intent():
         return question(ssml.prepare(message)).simple_card(title='Goals', content=message)
     elif( intent == 2): #tips
         message = tips.generateTipsMessage(userinfo_item['userid'])
-        #message = tips.generateTipsMessage("Hello")
-
         session.attributes['intent']=3
         message+=render_template("question_activities")
 
@@ -63,7 +59,6 @@ def no_intent():
     intent = session.attributes['intent']
     message=''
     if(intent==1):
-        #message += render_template('tips_question')
         message=render_template("question_activities")
         session.attributes['intent']=3
     elif( intent == 2): #tips
