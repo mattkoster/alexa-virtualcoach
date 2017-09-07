@@ -1,0 +1,26 @@
+
+welcome: Welcome, {{ first_name }} {{ last_name }}...You have {{ openact }} open activities for today
+
+tips_question: ...Would you like any tips on meeting your goals?
+
+good_bye: See you tomorrow.  Have a good day!
+
+tester: Its Alive
+
+goal_item_under: You have {{actual}} {{goalname}} activities completed for the month, that is {{difference}} under your goal of {{target}}<break time="1200ms" />
+
+goal_item_over: You have met your {{goalname}} goal of {{target}} for the month with {{actual}} activities<break time="1200ms" />
+
+goal_item_under_daily: You have completed {{actual}} {{goalname}} activities, that is {{difference}} under your goal of {{target}}<break time="1200ms" />
+
+goal_item_over_daily: You have met your {{goalname}} goal of {{target}} for today with {{actual}} activities<break time="1200ms" />
+
+activity_list: '{{ regarding }} is a type {{ segment }} client and has a {{ type }} for {{ subject }}... ...'
+
+opportunity_list: '{{ subject }} for {{ type }} for {{ regarding }}... ...'
+
+question_tip: Would you like any tips on meeting your goals?... ...
+
+question_activities: <break time="1200ms" /> Would you like to list your top 3 activities?... ...
+
+question_opportunities: <break time="1200ms" /> Would you like to list your top 3 opportunities?... ...
